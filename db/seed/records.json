@@ -5,8 +5,8 @@
     "experience": true,
     "level": 1,
     "impact": false,
-    "impactNote": "had a pretty calm day",
-    "symptomNote": "nothing to report",
+    "impactNote": "",
+    "symptomNote": "had a pretty calm day",
     "successNote": "saw a cute dog"
   },
   {
@@ -34,70 +34,30 @@
     "_id": "111111111111111111111103",
     "symptom": "anxiety",
     "experience": true,
-    "level": 3,
-    "impact": false,
-    "impactNote": "had a pretty calm day",
-    "symptomNote": "nothing to report",
-    "successNote": "saw a cute dog"
+    "level": 7,
+    "impact": true,
+    "impactNote": "still worried about yesterday",
+    "symptomNote": "",
+    "successNote": "ate some vegetables"
   },
 {
   "_id": "111111111111111111111104",
   "symptom": "anxiety",
   "experience": true,
-  "level": 1,
-  "impact": false,
-  "impactNote": "had a pretty calm day",
-  "symptomNote": "nothing to report",
-  "successNote": "saw a cute dog"
+  "level": 2,
+  "impact": true,
+  "impactNote": "did well on my test!",
+  "symptomNote": "feeling proud",
+  "successNote": "haven't had any panic attacks recently"
 },
   {
     "_id": "111111111111111111111105",
     "symptom": "anxiety",
     "experience": true,
-    "level": 1,
+    "level": 4,
     "impact": false,
-    "impactNote": "had a pretty calm day",
-    "symptomNote": "nothing to report",
-    "successNote": "saw a cute dog"
-  },
-  {
-    "_id": "111111111111111111111106",
-    "symptom": "anxiety",
-    "experience": true,
-    "level": 1,
-    "impact": false,
-    "impactNote": "had a pretty calm day",
-    "symptomNote": "nothing to report",
-    "successNote": "saw a cute dog"
-  },
-  {
-    "_id": "111111111111111111111107",
-    "symptom": "anxiety",
-    "experience": true,
-    "level": 1,
-    "impact": false,
-    "impactNote": "had a pretty calm day",
-    "symptomNote": "nothing to report",
-    "successNote": "saw a cute dog"
-  },
-  {
-    "_id": "111111111111111111111108",
-    "symptom": "anxiety",
-    "experience": true,
-    "level": 1,
-    "impact": false,
-    "impactNote": "had a pretty calm day",
-    "symptomNote": "nothing to report",
-    "successNote": "saw a cute dog"
-  },
-  {
-    "_id": "111111111111111111111109",
-    "symptom": "anxiety",
-    "experience": true,
-    "level": 1,
-    "impact": false,
-    "impactNote": "had a pretty calm day",
-    "symptomNote": "nothing to report",
-    "successNote": "saw a cute dog"
+    "impactNote": "",
+    "symptomNote": "don't know why I'm feeling anxious today",
+    "successNote": "spent time with friends"
   }
 ]
