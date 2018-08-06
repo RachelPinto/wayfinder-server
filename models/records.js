@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const recordSchema = new mongoose.Schema({
   symptom: { type: String, required: true },
-  experience: { type: boolean },
-  level: { type: number },
-  impact: { type: boolean },
-  impactNote: { type: string },
-  symptomNote: { type: string },
-  successNote: { type: string },
+  experience: { type: Boolean },
+  level: { type: Number },
+  impact: { type: Boolean },
+  impactNote: { type: String },
+  symptomNote: { type: String },
+  successNote: { type: String },
 });
 
 // Add `createdAt` and `updatedAt` fields

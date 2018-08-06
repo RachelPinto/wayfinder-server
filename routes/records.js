@@ -21,7 +21,7 @@ router.get('/:id', (req, res, next) => {
   Record
   .findById(req.params.id)
   .then(record => {
-    res.json(note)
+    res.json(record)
   })
 });
 
