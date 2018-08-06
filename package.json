@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "mocha": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js'",
-    "mocha-exit0": "mocha --exit --file test/setup.test.js '!(node_modules)/**/*test.js' || true",
+    "mocha-exit0": "mocha --exit --timeout 3000 --file test/setup.test.js '!(node_modules)/**/*test.js' || true",
     "test": "nodemon --exec npm run mocha-exit0",
     "cover": "nodemon --exec nyc --reporter=lcov --reporter=text-summary npm run mocha-exit0",
     "heroku": "node index.js",

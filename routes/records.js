@@ -25,4 +25,21 @@ router.get('/:id', (req, res, next) => {
   })
 });
 
+/* POST/CREATE AN ITEM */
+
+router.post('/', (req, res, next) => {
+  Record
+    .create({
+      symptom: req.body.symptom,
+      experience: req.body.experience,
+      level: req.body.level,
+      impact: req.body.impact,
+      impactNote: req.body.impactNote,
+      symptomNote: req.body.symptomNote,
+      successNote: req.body.successNote
+    })
+    .then(newRecord => res.location(`${req.originalUrl}${newRecord.id}`).status(201).json(newRecord))
+});
+
 module.exports = router;
+
