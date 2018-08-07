@@ -89,57 +89,57 @@ describe('records test hooks', (url = TEST_DATABASE_URL) => {
         });
     });
   })
-//_________________POST Tests_________________
-//Serial Request - Call API then call DB then compare
-describe('POST /api/notes', () => {
-  it('should create and return a new record when provided valid data', function () {
-    const newRecord = {
-      "symptom": "depression",
-      "experience": true,
-      "level": 5,
-      "impact": true,
-      "impactNote": "felt lonely",
-      "symptomNote": "was really cold and rainy today",
-      "successNote": "I read a good book"
-    };
+  //_________________POST Tests_________________
+  //Serial Request - Call API then call DB then compare
+  describe('POST /api/notes', () => {
+    it('should create and return a new record when provided valid data', function () {
+      const newRecord = {
+        "symptom": "depression",
+        "experience": true,
+        "level": 5,
+        "impact": true,
+        "impactNote": "felt lonely",
+        "symptomNote": "was really cold and rainy today",
+        "successNote": "I read a good book"
+      };
 
-    let res;
-    // 1) First, call the API
+      let res;
+      // 1) First, call the API
 
-    return chai.request(app)
-      .post('/api/records')
-      .send(newRecord)
-      .then(function (_res) {
-        res = _res;
-        expect(res).to.have.status(201);
-        expect(res).to.have.header('location');
-        expect(res).to.be.json;
-        expect(res.body).to.be.a('object');
-        expect(res.body).to.have.keys(
-          'id',
-          'symptom',
-          'experience',
-          'level',
-          'impact',
-          'impactNote',
-          'symptomNote',
-          'successNote',
-          'createdAt', 'updatedAt');
-      //  2) then call the database
-        return Record.findById(res.body.id);
-      })
-      // 3) then compare the API response to the database results
-      .then(data => {
-        expect(res.body.id).to.equal(data.id);
-        expect(res.body.symptom).to.equal(data.symptom);
-        expect(res.body.experience).to.equal(data.experience);
-        expect(res.body.level).to.equal(data.level);
-        expect(res.body.impact).to.equal(data.impact);
-        expect(res.body.impactNote).to.equal(data.impactNote);
-        expect(res.body.symptomNote).to.equal(data.symptomNote);
-        expect(res.body.successNote).to.equal(data.successNote);
-        expect((new Date(res.body.createdAt)).toString()).to.equal(data.createdAt.toString());
-      });
+      return chai.request(app)
+        .post('/api/records')
+        .send(newRecord)
+        .then(function (_res) {
+          res = _res;
+          expect(res).to.have.status(201);
+          expect(res).to.have.header('location');
+          expect(res).to.be.json;
+          expect(res.body).to.be.a('object');
+          expect(res.body).to.have.keys(
+            'id',
+            'symptom',
+            'experience',
+            'level',
+            'impact',
+            'impactNote',
+            'symptomNote',
+            'successNote',
+            'createdAt', 'updatedAt');
+          //  2) then call the database
+          return Record.findById(res.body.id);
+        })
+        // 3) then compare the API response to the database results
+        .then(data => {
+          expect(res.body.id).to.equal(data.id);
+          expect(res.body.symptom).to.equal(data.symptom);
+          expect(res.body.experience).to.equal(data.experience);
+          expect(res.body.level).to.equal(data.level);
+          expect(res.body.impact).to.equal(data.impact);
+          expect(res.body.impactNote).to.equal(data.impactNote);
+          expect(res.body.symptomNote).to.equal(data.symptomNote);
+          expect(res.body.successNote).to.equal(data.successNote);
+          expect((new Date(res.body.createdAt)).toString()).to.equal(data.createdAt.toString());
+        });
+    });
   });
-});
 });
