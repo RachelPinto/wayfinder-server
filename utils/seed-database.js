@@ -7,7 +7,7 @@ const Experienced = require('../models/experience-records');
 const seedRecords = require('../db/seed/records');
 const seedExperienceRecords = require('../db/seed/experience-records');
 
-mongoose.connect(DATABASE_URL, {useNewUrlParser: true})
+mongoose.connect(DATABASE_URL, /*{useNewUrlParser: true}*/)
   .then(() => mongoose.connection.db.dropDatabase())
   .then(() => {
     return Promise.all([

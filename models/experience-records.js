@@ -5,9 +5,9 @@ const experienceRecordSchema = new mongoose.Schema({
 });
 
 // Add `createdAt` and `updatedAt` fields
-recordSchema.set('timestamps', true);
+experienceRecordSchema.set('timestamps', true);
 
-recordSchema.set('toObject', {
+experienceRecordSchema.set('toObject', {
   virtuals: true,     // include built-in virtual `id`
   versionKey: false,  // remove `__v` version key
   transform: (doc, ret) => {
