@@ -41,8 +41,9 @@ passport.use(jwtStrategy);
 
 // Mount routers
 app.use('/api/records', recordsRouter);
-app.use('/api', usersRouter);
+app.use('/api/users', usersRouter);
 app.use('/api/experience-records', experiencedRouter)
+
 
 
 function runServer(port = PORT) {

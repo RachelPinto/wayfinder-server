@@ -10,7 +10,7 @@ const router = express.Router();
 
 //Create User POST ENDPOINT
 
-router.post('/users', (req, res, next) => {
+router.post('/', (req, res, next) => {
   
 
   let { username, password } = req.body;
@@ -107,7 +107,6 @@ router.post('/users', (req, res, next) => {
           const newUser = {
             username,
             password: digest,
-            fullname
           };
           return User.create(newUser);
         })
