@@ -51,8 +51,8 @@ describe('records test hooks', (url = TEST_DATABASE_URL) => {
           expect(res.body).to.be.a('object');
           expect(res.body).to.have.keys(
             'id',
-            'symptom',
-            'experience',
+            // 'symptom',
+            // 'experience',
             'level',
             'impact',
             'impactNote',
@@ -62,8 +62,8 @@ describe('records test hooks', (url = TEST_DATABASE_URL) => {
 
           // 3) then compare database results to API response
           expect(res.body.id).to.equal(data.id);
-          expect(res.body.symptom).to.equal(data.symptom);
-          expect(res.body.experience).to.equal(data.experience);
+          // expect(res.body.symptom).to.equal(data.symptom);
+          // expect(res.body.experience).to.equal(data.experience);
           expect(res.body.level).to.equal(data.level);
           expect(res.body.impact).to.equal(data.impact);
           expect(res.body.impactNote).to.equal(data.impactNote);
@@ -94,8 +94,8 @@ describe('records test hooks', (url = TEST_DATABASE_URL) => {
   describe('POST /api/notes', () => {
     it('should create and return a new record when provided valid data', function () {
       const newRecord = {
-        "symptom": "depression",
-        "experience": true,
+        // "symptom": "depression",
+        // "experience": true,
         "level": 5,
         "impact": true,
         "impactNote": "felt lonely",
@@ -117,8 +117,8 @@ describe('records test hooks', (url = TEST_DATABASE_URL) => {
           expect(res.body).to.be.a('object');
           expect(res.body).to.have.keys(
             'id',
-            'symptom',
-            'experience',
+            // 'symptom',
+            // 'experience',
             'level',
             'impact',
             'impactNote',
@@ -131,8 +131,8 @@ describe('records test hooks', (url = TEST_DATABASE_URL) => {
         // 3) then compare the API response to the database results
         .then(data => {
           expect(res.body.id).to.equal(data.id);
-          expect(res.body.symptom).to.equal(data.symptom);
-          expect(res.body.experience).to.equal(data.experience);
+          // expect(res.body.symptom).to.equal(data.symptom);
+          // expect(res.body.experience).to.equal(data.experience);
           expect(res.body.level).to.equal(data.level);
           expect(res.body.impact).to.equal(data.impact);
           expect(res.body.impactNote).to.equal(data.impactNote);

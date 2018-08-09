@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const recordSchema = new mongoose.Schema({
-  symptom: { type: String, required: true },
-  experience: { type: Boolean },
+  // symptom: { type: String, required: true },
+  // experience: { type: Boolean },
   level: { type: Number },
   impact: { type: Boolean },
   impactNote: { type: String },
