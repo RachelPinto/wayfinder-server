@@ -2,21 +2,22 @@
   {
     "_id": "333333333333333333333300",
     "username": "samanthauser",
-    "password": "nonhashedpassword"
+    "password": "$2a$10$5BZZVKUvl54yOgospCli9.wPgkTLTzoha5MciEDytHg7WKnqyZgOe"
   },
   {
     "_id": "333333333333333333333301",
     "username": "carrieuser",
-    "password": "nonhashedpassword"
+    "password": "$2a$10$P/8TzjdSVBuzPOwH93K6weKWHuzqpZrRGn.OmJo.OKFq3OoSANmIW"
+
   },
   {
     "_id": "333333333333333333333302",
     "username": "mirandaeuser",
-    "password": "nonhashedpassword"
-  }
+    "password": "$2a$10$WeRIFOcEDh//YZiYptOiAuu3csfl4.aZJfS.wDQOgGj6elawPMjQO"
+  },
   {
     "_id": "333333333333333333333303",
     "username": "charlotteuser",
-    "password": "nonhashedpassword"
+    "password": "$2a$10$CvfiZKVhhmTYKnRRsH4mu.ZlJNtxFLmhQaKeEYlbxzgSrGyrQFnyq"
   }
 ]

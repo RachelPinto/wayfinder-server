@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const password = '42aceofdiamonds';
+const password = '25kingofspades';
 
 /* Hash a password with cost-factor 10, then run compare to verify */
 bcrypt.hash(password, 10)
