@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const experienceRecordSchema = new mongoose.Schema({ 
   experience: { type: Boolean },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
 });
 
 // Add `createdAt` and `updatedAt` fields

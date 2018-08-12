@@ -14,8 +14,12 @@ mongoose.connect(DATABASE_URL, /*{useNewUrlParser: true}*/)
   .then(() => {
     return Promise.all([
       Record.insertMany(seedRecords),
+      
       Experienced.insertMany(seedExperienceRecords),
-      User.insertMany(seedUsers)
+      
+      User.insertMany(seedUsers),
+      User.createIndexes()
+
     ]);
   })
   .then(() => mongoose.disconnect())
