@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
   const userId = req.user.id;
 
   Record
-    .find( userId )
+    .find( {userId} )
     .then(records => res.json(records))
     .catch(err => {
       next(err);
@@ -23,7 +23,7 @@ router.get('/', (req, res, next) => {
 });
 
 
-/* GET/READ A SINGLE ITEM */
+/* GET/READ A SINGLE ITEM BY ID */
 
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
@@ -35,7 +35,7 @@ router.get('/:id', (req, res, next) => {
     return next(err);
   }
 
-  Experienced
+  Record
     .findOne({ _id: id, userId })
     .then(result => {
       if (result) {
@@ -53,10 +53,10 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
 
-  const { level, impact, impactNote, symptomNote, successNote} = req.body;
+  const { symptoms } = req.body;
   const userId = req.user.id;
 
-  const newRecord = { level, impact, impactNote, symptomNote, successNote, userId }
+  const newRecord = { symptoms, userId }
 
   Record.create(newRecord)
       .then(result => {
@@ -69,5 +69,46 @@ router.post('/', (req, res, next) => {
       next(err);
     });
 });
+
+// /* GET/READ ALL ITEMS BY DAY */
+
+// router.get('/day', (req, res, next) => {
+
+//   const userId = req.user.id;
+
+//   Daylist
+//     .find( userId )
+//     .then(dayrecords => res.json(dayrecords))
+//     .catch(err => {
+//       next(err);
+//     });
+// });
+
+
+// /* GET/READ A SINGLE ITEM BY DAY */
+
+// router.get('/day/:date', (req, res, next) => {
+//   const { id } = req.params;
+//   const userId = req.user.id;
+
+//   if (!mongoose.Types.ObjectId.isValid(id)) {
+//     const err = new Error('The `id` is not valid');
+//     err.status = 400;
+//     return next(err);
+//   }
+
+//   Daylist
+//     .find({ createdAt: req.params.date, userId })
+//     .then(result => {
+//       if (result) {
+//         res.json(result);
+//       } else {
+//         next();
+//       }
+//     })
+//     .catch(err => {
+//       next(err);
+//     });
+// });
 
 module.exports = router;

@@ -4,7 +4,8 @@ mongoose.Promise = global.Promise;
 
 const userSchema = new mongoose.Schema({
   username: {type: String, required: true, unique: true},
-  password: {type: String, required: true}
+  password: {type: String, required: true},
+  symptoms: [{ type: String }]
 });
 
 userSchema.set('toObject', {
@@ -31,8 +32,6 @@ userSchema.methods.validatePassword = function (password) {
 userSchema.statics.hashPassword = function (password) {
   return bcrypt.hash(password, 10);
 };
-
-const User = mongoose.model('User', userSchema);
 
 module.exports = mongoose.model('User', userSchema);
 

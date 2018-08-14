@@ -15,7 +15,6 @@ const jwtStrategy = require('./passport/jwt');
 const recordsRouter = require('./routes/records');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
-const experiencedRouter = require('./routes/experience-records')
 
 // Create an Express application
 const app = express();
@@ -42,7 +41,6 @@ passport.use(jwtStrategy);
 // Mount routers
 app.use('/api/records', recordsRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/experience-records', experiencedRouter)
 
 
 

@@ -13,7 +13,7 @@ const router = express.Router();
 router.post('/', (req, res, next) => {
   
 
-  let { username, password } = req.body;
+  let { username, password, symptoms } = req.body;
   //all fields must exist
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
@@ -107,6 +107,7 @@ router.post('/', (req, res, next) => {
           const newUser = {
             username,
             password: digest,
+            symptoms
           };
           return User.create(newUser);
         })
