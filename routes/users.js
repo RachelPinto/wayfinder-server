@@ -13,9 +13,9 @@ const router = express.Router();
 router.post('/', (req, res, next) => {
   
 
-  let { username, password, symptoms } = req.body;
+  let { username, password, firstName, lastName, symptoms } = req.body;
   //all fields must exist
-  const requiredFields = ['username', 'password'];
+  const requiredFields = ['username', 'password', 'symptoms'];
   const missingField = requiredFields.find(field => !(field in req.body));
 
   if (missingField) {
@@ -28,7 +28,7 @@ router.post('/', (req, res, next) => {
   };
 
   //all fields must be a string
-  const stringFields = ['username', 'password'];
+  const stringFields = ['username', 'password', 'firstName', 'lastName'];
   const nonStringField = stringFields.find(
     field => field in req.body && typeof req.body[field] !== 'string'
   );
@@ -107,7 +107,9 @@ router.post('/', (req, res, next) => {
           const newUser = {
             username,
             password: digest,
-            symptoms
+            symptoms,
+            firstName,
+            lastName
           };
           return User.create(newUser);
         })
