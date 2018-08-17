@@ -56,7 +56,7 @@ router.post('/', (req, res, next) => {
   console.log(req.body)
   const userId = req.user.id;
 
-  const newRecord = { symptoms: [req.body], userId }
+  const newRecord = { symptoms: req.body, userId }
 
   Record.create(newRecord)
       .then(result => {
