@@ -53,7 +53,7 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
 
-  console.log(req.body)
+  console.log(req.body, 'this is reqbody')
   const userId = req.user.id;
 
   const newRecord = { symptoms: req.body, userId }
